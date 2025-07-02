@@ -1,0 +1,4 @@
+sdk: gradio
+app_file: launch.py
+python_version: 3.10
+
