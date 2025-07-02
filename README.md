@@ -46,20 +46,21 @@ width="400">
 ### 🛠️ Environment Setup
 
 ```bash
-# Clone the repo
-git clone https://github.com/dave21-py/apac-llm-dashboard.git
-cd apac-llm-dashboard
+# Clone the repo
+git clone https://github.com/dave21-py/llm-benchmark-visualizer.git
+cd llm-benchmark-visualizer
 
-# Python virtual environment
+# Python virtual environment
 python3 -m venv venv
-source venv/bin/activate
+source venv/bin/activate        # Windows: venv\Scripts\activate
 pip install -r requirements.txt
 
-# Build the data (optional – CI refreshes it nightly)
-python etl.py  # writes scores.csv
+# Build the data (optional – CI refreshes it nightly)
+python etl.py   # writes scores.csv
 
-# Launch the dashboard
+# Launch the dashboard
 streamlit run app.py
+
 ```
 
 ## ✨ Credits
