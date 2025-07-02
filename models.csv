@@ -1,0 +1,17 @@
+model_name,organisation,param_B,release_date,license,primary_benchmark_url,country
+Qwen2-72B-Instruct,Alibaba Cloud,72,2024/06/06,Qianwen License,https://huggingface.co/datasets/open-llm-leaderboard/requests,CN
+DeepSeek-V2,DeepSeek AI,236,2024/05/07,DeepSeek-V2 License,https://huggingface.co/datasets/open-llm-leaderboard/requests,CN
+InternVL-Chat-V1.5,Shanghai AI Laboratory & Sensetime & Tsinghua University,26,2024/04/17,MIT License,http://opencompass.openxlab.space/assets/OpenVLM.json,CN
+Orion-14B-Chat,OrionStar AI,14,2023/11/23,Orion-14B Series Models Community License,https://huggingface.co/OrionStarAI/Orion-14B-Chat,CN
+Yi-34B,01.AI,34,2023/11/09,Yi Series Models Community License,https://huggingface.co/01-ai/Yi-34B,CN
+TransCore-M,PCI Research,13.4,2024/04/16,,http://opencompass.openxlab.space/assets/OpenVLM.json,CN
+calm2-7b-chat,CyberAgent,7,2023/10/18,Apache-2.0 License,https://huggingface.co/cyberagent/calm2-7b-chat,JP
+ELYZA-japanese-Llama-2-7b-instruct,ELYZA,7,2023/08/29,Llama 2 Community License,https://huggingface.co/elyza/ELYZA-japanese-Llama-2-7b-instruct,JP
+japanese-large-lm-3.6b-instruction-sft,LINE,3.6,2023/11/14,Apache-2.0 License,https://huggingface.co/line-corporation/japanese-large-lm-3.6b-instruction-sft,JP
+weblab-10b-instruction-sft,LINE,10,2023/05/17,Apache-2.0 License,https://huggingface.co/line-corporation/weblab-10b-instruction-sft,JP
+Swallow-7b-instruct-hf,Tokyo Institute of Technology,7,2023/10/25,Apache-2.0 License,https://huggingface.co/tokyotech-llm/Swallow-7b-instruct-hf,JP
+Swallow-13b-instruct-hf,Tokyo Institute of Technology,13,2023/10/25,Apache-2.0 License,https://huggingface.co/tokyotech-llm/Swallow-13b-instruct-hf,JP
+Rakuda-7B-instruct,Rakuda Team,7,2023/08/04,,https://github.com/yuzu-ai/rakuda,JP
+PLaMo-13B,Preferred Networks,13,2023/05/17,Apache-2.0 License,https://huggingface.co/pfnet/plamo-13b,JP
+llm-jp-13b-instruct-full-jaster-dolly-oasst-v1.0,LLM-jp,13,2023/09/20,Apache-2.0 License,https://huggingface.co/llm-jp/llm-jp-13b-instruct-full-jaster-dolly-oasst-v1.0,JP
+
