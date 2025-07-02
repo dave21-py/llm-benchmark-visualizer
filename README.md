@@ -1,4 +1,4 @@
-# 📡  Open Bench Radar
+# LLM Benchmark Visualizer
 
 <p align="center">
 <img src="logo.png"
