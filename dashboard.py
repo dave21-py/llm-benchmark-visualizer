@@ -5,7 +5,7 @@ import base64
 
 # --- PAGE CONFIG ---
 st.set_page_config(
-    page_title="Open Bench Radar",
+    page_title="LLM Benchmark Visualizer",
     page_icon="📡",
     layout="wide",
     initial_sidebar_state="collapsed",
@@ -113,57 +113,127 @@ df = load_data()
 def load_css():
     st.markdown("""
     <style>
-        /* Base Styles */
-        body { background-color: #0E1117; color: #FAFAFA; }
-        .main .block-container { padding: 2rem 3rem; }
-        #MainMenu, .stDeployButton, footer { display: none; }
+        :root {
+            --main-bg: var(--background-color);
+            --text-main: var(--text-color);
+            --card-bg: var(--secondary-background-color);
+            --accent: var(--primary-color);
+            --muted: #A0A0A0;
+        }
+
+        body {
+            background-color: var(--main-bg);
+            color: var(--text-main);
+        }
+
+        .main .block-container {
+            padding: 2rem 3rem;
+        }
+
+        #MainMenu, .stDeployButton, footer {
+            display: none;
+        }
+
         .stButton>button {
-            background-color: #1A1C23;
-            border: 1px solid #262730;
+            background-color: var(--card-bg);
+            border: 1px solid var(--muted);
             border-radius: 0.5rem;
             padding: 0.5rem 1rem;
-            color: #FAFAFA;
+            color: var(--text-main);
         }
-        .stButton>button:hover { background-color: #262730; border-color: #4A4C58; color: #FFFFFF; }
-        .stSelectbox div[data-baseweb="select"] > div { background-color: #1A1C23; border-radius: 0.5rem; }
-        
-        /* Title and Subtitle */
-        h1 { font-size: 2.8rem; font-weight: 700; text-align: center; }
-        .subtitle { text-align: center; color: #A0A0A0; font-size: 1.1rem; margin-bottom: 2rem; }
 
-        /* KPI Cards - adapted from your original style */
+        .stButton>button:hover {
+            background-color: var(--accent);
+            border-color: var(--text-main);
+            color: #fff;
+        }
+
+        .stSelectbox div[data-baseweb="select"] > div {
+            background-color: var(--card-bg);
+            border-radius: 0.5rem;
+        }
+
+        /* Title & Subtitle */
+        h1 {
+            font-size: 2.8rem;
+            font-weight: 700;
+            text-align: center;
+        }
+
+        .subtitle {
+            text-align: center;
+            color: var(--muted);
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+        }
+
+        /* KPI Cards */
         .kpi-card {
-            border-radius: 12px; padding: 18px 16px; background-color: #111218;
-            border: 1px solid #262730; text-align: center;
+            border-radius: 12px;
+            padding: 18px 16px;
+            background-color: var(--card-bg);
+            border: 1px solid var(--muted);
+            text-align: center;
         }
-        .kpi-title { font-size: 0.9rem; color: #888; margin-bottom: 8px; }
-        .kpi-value { font-size: 1.8rem; font-weight: 700; margin: 0; color: #FFFFFF; }
-        
-        /* Custom Leaderboard Table */
-        .table-container { margin-top: 2rem; }
-        .table-header {
-            font-size: 0.9rem; color: #A0A0A0; font-weight: 600; padding: 1rem 0.75rem;
-            border-bottom: 1px solid #262730; text-align: right;
+
+        .kpi-title {
+            font-size: 0.9rem;
+            color: var(--muted);
+            margin-bottom: 8px;
         }
-        .table-header.model-col { text-align: left; }
+
+        .kpi-value {
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin: 0;
+            color: var(--text-main);
+        }
+
+        /* Table Styling */
+        .table-header, .table-row {
+            font-size: 0.9rem;
+            color: var(--text-main);
+        }
+
         .table-row {
-            padding: 1rem 0.75rem; border-bottom: 1px solid #262730;
-            transition: background-color 0.2s ease-in-out;
+            border-bottom: 1px solid var(--muted);
         }
-        .table-row:hover { background-color: rgba(48, 53, 70, 0.4); }
-        .model-cell { display: flex; align-items: center; }
-        .logo-img { width: 32px; height: 32px; border-radius: 50%; object-fit: contain; margin-right: 12px; }
-        .model-name { font-weight: 600; font-size: 1.1rem; color: #FFFFFF; }
-        .creator-name { font-size: 0.9rem; color: #A0A0A0; }
-        .metric-value { font-size: 1.1rem; font-weight: 500; color: #FFFFFF; text-align: right; }
-        .metric-unit { font-size: 0.8rem; color: #A0A0A0; text-align: right; }
+
+        .table-row:hover {
+            background-color: rgba(100, 100, 100, 0.05);
+        }
+
+        .model-name {
+            font-weight: 600;
+            font-size: 1.1rem;
+            color: var(--text-main);
+        }
+
+        .creator-name {
+            font-size: 0.9rem;
+            color: var(--muted);
+        }
+
+        .metric-value {
+            font-size: 1.1rem;
+            font-weight: 500;
+            color: var(--text-main);
+            text-align: right;
+        }
+
+        .metric-unit {
+            font-size: 0.8rem;
+            color: var(--muted);
+            text-align: right;
+        }
     </style>
     """, unsafe_allow_html=True)
+
 
 load_css()
 
 # --- HEADER SECTION ---
-st.title("📡  Open Bench Radar")
+st.title("LLM Benchmark Visualizer")
 st.markdown("<p class='subtitle'>Live, side-by-side metrics for open-source and proprietary LLMs – "
     "performance × price × speed.</p>", unsafe_allow_html=True)
 
