@@ -30,10 +30,6 @@ width="400">
 <img src="demo2.png"
 width="400">
 </p>
-<p align="center">
-<img src="demo3.png"
-width="400">
-</p>
 
 
 #### System Requirements
